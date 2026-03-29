@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Collaboration Invite 🎬</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .card {
+      text-align: center;
+      background: rgba(255,255,255,0.1);
+      padding: 40px;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    h1 {
+      font-size: 26px;
+      margin-bottom: 30px;
+    }
+
+    button {
+      padding: 12px 25px;
+      font-size: 16px;
+      margin: 10px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    #yes {
+      background: #00c853;
+      color: white;
+    }
+
+    #yes:hover {
+      transform: scale(1.1);
+    }
+
+    #no {
+      background: #ff5252;
+      color: white;
+      position: absolute;
+    }
+
+    .fade {
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="card fade">
+  <h1>Kya tum mere banking documentary video me kaam karoge? 🎬</h1>
+
+  <button id="yes" onclick="yesClicked()">Yes 😎</button>
+  <button id="no" onmouseover="moveButton()">No 😅</button>
+</div>
+
+<script>
+function yesClicked() {
+  document.body.innerHTML = `
+    <div class="card fade">
+      <h1>🎧 Audition ka wait kijiye...<br> Bahut jald aa raha hai!</h1>
+    </div>
+  `;
+}
+
+function moveButton() {
+  let btn = document.getElementById("no");
+
+  let x = Math.random() * (window.innerWidth - 120);
+  let y = Math.random() * (window.innerHeight - 80);
+
+  btn.style.left = x + "px";
+  btn.style.top = y + "px";
+}
+</script>
+
+</body>
+</html>
