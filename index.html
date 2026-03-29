@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Invite 🎬</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial;
+      margin-top: 80px;
+      background: #fff8f0;
+    }
+
+    h1 {
+      font-size: 28px;
+    }
+
+    button {
+      padding: 12px 25px;
+      font-size: 18px;
+      margin: 15px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    #yes {
+      background-color: #ff6b6b;
+      color: white;
+    }
+
+    #no {
+      background-color: #ddd;
+      position: absolute;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>Kya tum mere banking documentary video me kaam karoge? 🎬</h1>
+
+<button id="yes" onclick="yesClicked()">Haan 😎</button>
+<button id="no">Nahi 😅</button>
+
+<script>
+const noBtn = document.getElementById("no");
+
+document.addEventListener("mousemove", (e) => {
+  const rect = noBtn.getBoundingClientRect();
+
+  const distance = Math.hypot(
+    e.clientX - (rect.left + rect.width / 2),
+    e.clientY - (rect.top + rect.height / 2)
+  );
+
+  if (distance < 120) {
+    moveButton();
+  }
+});
+
+function moveButton() {
+  let x = Math.random() * (window.innerWidth - 120);
+  let y = Math.random() * (window.innerHeight - 80);
+
+  noBtn.style.left = x + "px";
+  noBtn.style.top = y + "px";
+}
+
+function yesClicked() {
+  document.body.innerHTML = "<h1>🎧 Audition ka wait kijiye...<br> Bahut jald aa raha hai!</h1>";
+}
+</script>
+
+</body>
+</html>
